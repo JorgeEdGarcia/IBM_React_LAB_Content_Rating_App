@@ -21,7 +21,16 @@ class ContentRating extends Component {
                 dislikes: prevState.dislikes + 1,
                 totalRatings: prevState.totalRatings + 1
             }));
+        },
+
+        handleReset: () => {
+            this.setState({
+                likes: 0,
+                dislikes: 0,
+                totalRatings: 0
+            });
         }
+
     };
   }
   render() {
@@ -45,6 +54,10 @@ class ContentRating extends Component {
              <p>
                  Total Ratings: {this.state.totalRatings}
              </p>
+
+             <button className="reset-button" onClick={this.state.handleReset}>
+                 RESET
+             </button>
 
          </div>
      </>
